@@ -97,5 +97,31 @@ namespace twozerofoureight
             controller.ActionPerformed(TwoZeroFourEightController.DOWN);
         }
 
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            //capture up arrow key
+            if (keyData == Keys.Up)
+            {
+                controller.ActionPerformed(TwoZeroFourEightController.UP);
+                return true;
+            }else if (keyData == Keys.Down)
+            {
+                controller.ActionPerformed(TwoZeroFourEightController.DOWN);
+                return true;
+            }
+            else if (keyData == Keys.Left)
+            {
+                controller.ActionPerformed(TwoZeroFourEightController.LEFT);
+                return true;
+            }
+            else if (keyData == Keys.Right)
+            {
+                controller.ActionPerformed(TwoZeroFourEightController.RIGHT);
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
     }
 }
